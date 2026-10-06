@@ -30,16 +30,22 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             background-color: var(--black);
             color: var(--text-light);
             font-family: var(--font-text);
             font-size: 15px;
             line-height: 1.8;
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
+        img { max-width: 100%; }
 
         .background-grid {
             position: fixed;
@@ -190,7 +196,7 @@
            ============================================ */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
             border: 1px solid var(--mid-gray);
             /* Убираем gap и серый фон контейнера */
         }
@@ -352,7 +358,7 @@
         /* КОМАНДА */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
             border: 1px solid var(--mid-gray);
         }
 
@@ -471,7 +477,7 @@
         /* КОНТАКТЫ */
         .contacts-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
             border: 1px solid var(--mid-gray);
         }
 
@@ -532,6 +538,11 @@
             font-size: 0.95rem;
             color: var(--pure-white);
             font-weight: 400;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-row {
+            gap: 15px;
         }
 
         .contact-arrow {
@@ -610,7 +621,7 @@
             .container { padding: 0 20px; }
             .banner { height: 180px; }
             .hero { padding: 50px 0 40px; }
-            .hero-title { font-size: 2rem; letter-spacing: 6px; margin-left: 6px; }
+            .hero-title { font-size: 1.8rem; letter-spacing: 4px; margin-left: 4px; }
             .hero-subtitle { font-size: 0.65rem; letter-spacing: 2px; }
             .hero-description { font-size: 0.85rem; }
             .section { padding: 50px 0; }
